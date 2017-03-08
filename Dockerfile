@@ -15,7 +15,7 @@ RUN mkdir -p /src/app
 RUN mkdir /src/app/node_modules
 RUN mkdir /src/app/public
 RUN chown app:app /src/app/node_modules
-RUN chown app:app /src/app/dist
+RUN chown app:app /src/app/public
 
 # Install app dependencies
 COPY package.json /src/app

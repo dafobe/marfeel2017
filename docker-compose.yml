@@ -5,7 +5,7 @@ services:
   # Mounts the app as a volume and installs packages so we can develop locally
   marfeel_test:
     build: ./
-    command: npm run start
+    command: npm start
     volumes:
       - ./:/src/app
       - /src/app/node_modules
