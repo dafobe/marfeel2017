@@ -1,0 +1,74 @@
+@desktop: ~"only screen
+					  and (min-width: 800px) 
+					  and (max-width: 1600px)";
+@background-color: linear-gradient(to right, #e2ebf6 0%, #c9e8ed 100%);
+@features-color: #868688;
+@features-padding: 15px 0 0 0;
+@features-font-color: #FFFFFF;
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
+
+/* __ Gallery __*/
+.gallery{
+	
+}
+.gallery-container{
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+	overflow: hidden;
+	/* width: 400%; */
+}
+.gallery-content{
+	position: relative;
+	top: 0;
+	left: 0px;
+	overflow-x: auto;
+	white-space: nowrap;
+	width: 100%;
+	box-shadow: 0 3px 3px -3px #9E9E9E;
+}
+.gallery-item{
+	/* max-width: 320px; */
+	display: inline-block;
+	width: 100%;
+}
+/* __ Navigation __*/
+.gallery-nav{
+	margin-top: 20px;
+	height: 30px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+.gallery-nav-dot{
+    content: " ";
+    width: 24px;
+    height: 24px;
+    background-color: #C0C0C0;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20fill%3D%22%23000000%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M12%202C6.47%202%202%206.47%202%2012s4.47%2010%2010%2010%2010-4.47%2010-10S17.53%202%2012%202zm0%2018c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208z%22%2F%3E%0A%3C%2Fsvg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg%20fill%3D%22%23000000%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M12%202C6.47%202%202%206.47%202%2012s4.47%2010%2010%2010%2010-4.47%2010-10S17.53%202%2012%202zm0%2018c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208z%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+.gallery-nav-dot.active{
+	-webkit-mask-image: url("data:image/svg+xml,%3Csvg%20fill%3D%22%23000000%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M12%202C6.48%202%202%206.48%202%2012s4.48%2010%2010%2010%2010-4.48%2010-10S17.52%202%2012%202z%22%2F%3E%0A%3C%2Fsvg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg%20fill%3D%22%23000000%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M12%202C6.48%202%202%206.48%202%2012s4.48%2010%2010%2010%2010-4.48%2010-10S17.52%202%2012%202z%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+/* === Desktop === */
+@media @desktop{
+  /* hide navigation in desktop*/
+  .gallery-nav{
+  	display: none;
+  }
+  header {
+    justify-content: flex-start;
+	}
+  .gallery-content{
+  
+	display: flex;
+  }
+  .gallery-item{
+	max-width: 320px;
+	flex-grow: 1;
+	flex-basis: 50%;
+	}
+}

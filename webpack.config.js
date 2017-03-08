@@ -8,31 +8,38 @@ const extractCommons = new webpack.optimize.CommonsChunkPlugin({
   filename: 'commons.js'
 })
 
-const extractCSS = new ExtractTextPlugin('[name].bundle.css')
+const extractCSS = new ExtractTextPlugin('[name].css');
+
+const sourcePath = path.resolve(__dirname, 'src');
+const distPath = path.resolve(__dirname, 'public');
 
 const config = {
-  context: path.resolve(__dirname, 'src'),
+  context: sourcePath,
   entry: {
     app: ['./index.js']
   },
    output: {
-    path: path.resolve(__dirname, 'public'),
+    path: distPath,
     publicPath: '/public/',
     filename: '[name].bundle.js'
   },
   module: {
-    rules: [{
-      test: /\.scss$/,
-      include: path.resolve(__dirname, 'src'),
-      loader: extractCSS.extract(['css-loader','sass-loader'])
-    }, {
-      test: /\.js$/,
-      include: path.resolve(__dirname, 'src'),
-      use: [{
-        loader: 'babel-loader',
-        options: { presets: ['es2015'] }
+    rules: [
+      {
+        test: /\.less$/,
+        include: sourcePath,
+        use: extractCSS.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'less-loader']
+        })
+      },{
+        test: /\.js$/,
+        include: sourcePath,
+        use: [{
+          loader: 'babel-loader',
+          options: { presets: ['es2015'] }
+        }]
       }]
-    }]
   },
   watch: true,
   watchOptions: {
@@ -40,8 +47,8 @@ const config = {
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
-    extractCommons,
-    extractCSS
+    extractCSS,
+    extractCommons
   ]
 }
 

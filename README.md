@@ -17,8 +17,8 @@ Recomended requirements:
 
 ## Environment
 Node
-Webpack 2 as bundler tool and dependency management
-Webpack 2 plugins for code optimization
+Webpack 2.2.1 as bundler tool and dependency management
+Webpack 2.2.1 plugins for code optimization
 Babel transpiler to add JS
 
 Webpack dev server as web server
