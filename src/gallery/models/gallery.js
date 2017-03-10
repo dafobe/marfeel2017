@@ -1,6 +1,7 @@
 export default class Gallery {
   constructor (name) {
-    this.name = name
+    this.name = name;
+    this.items
   }
 
   set name (name){
