@@ -3,12 +3,17 @@ import {default as Chart, DonutChart} from './models/chart';
 
 const init = () => {
 	
-	const chart = new Chart(200, 200, 'graph-container');
-	chart.height = 100;
-	console.log(chart.print(), chart.startup());
+	const donutOptions = {
+		width: 200,
+		height: 200,
+		domContainer: 'graph-container',
+		radius: 100,
+		innerRadius: 50 
+	}
 
-	const donutChart = new DonutChart(333, 333, 'graph-container', 50, 20);
+	const donutChart = new DonutChart(donutOptions);
 	donutChart.height = 444;
+	donutChart.init();
 	console.log(donutChart.print());
 }
 

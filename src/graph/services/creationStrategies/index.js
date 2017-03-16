@@ -1,2 +1,2 @@
-export {default as PieChart} from './pieStrategy';
-export {default as AreaChart} from './areaStrategy';
+export { default as PieStrategy} from './pieStrategy';
+export { default as AreaStrategy} from './areaStrategy';
